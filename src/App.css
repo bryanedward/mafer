@@ -17,6 +17,9 @@ body {
   background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que se repita */
+  height: 100vh; /* Asegura que el cuerpo ocupe el 100% de la altura de la ventana */
+  margin: 0; /* Elimina el margen predeterminado del body */
+  overflow: hidden; /* Previene el scroll si no es necesario */
 }
 
 .logo {
