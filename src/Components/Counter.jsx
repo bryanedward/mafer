@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const targetDate = new Date("2025-03-10T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
+const targetDate = new Date("2025-03-11T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
 
 const phrases = [
   "Que todos tus sueños se hagan realidad.",
@@ -73,7 +73,7 @@ const Counter = () => {
     setCurrentPhrase(randomPhrase);
   };
 
-  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 10;
+  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 11;
 
   return (
     <div className="container">
