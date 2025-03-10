@@ -1,18 +1,35 @@
+import confetti from "canvas-confetti";
 import { useState, useEffect } from "react";
 
-const targetDate = new Date("2025-03-11T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
+const targetDate = new Date("2025-03-10T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
 
 const phrases = [
-  "Que todos tus sueños se hagan realidad.",
-  "Eres una persona increíble.",
-  "Disfruta tu día al máximo. 🎂",
+  {
+    title: "Que todos tus sueños se hagan realidad.",
+  },
+  {
+    title: "Eres una persona increíble.",
+  },
+  {
+    title: "Disfruta tu día al máximo. 🎂",
+  },
 ];
 
 const customPhrases = [
-  "Hoy es un día especial, y de corazón espero que tengas mucha alegría y éxito.",
-  "Ojalá este año te traiga un montón de oportunidades.",
-  "Recuerda, cada pequeño paso te lleva más cerca de donde quieres estar. Confía en ti, Mafer. 💫",
-  "Para lo que necesites, aquí estará su servidor. 😊",
+  {
+    title:
+      "Hoy es un día especial, y de corazón espero que tengas mucha alegría y éxito.",
+  },
+  {
+    title: "Ojalá este año te traiga un montón de oportunidades.",
+  },
+  {
+    title:
+      "Recuerda, cada pequeño paso te lleva más cerca de donde quieres estar. Confía en ti, Mafer. 💫",
+  },
+  {
+    title: "Para lo que necesites, aquí estará su servidor. 😊",
+  },
 ];
 
 const Counter = () => {
@@ -65,15 +82,27 @@ const Counter = () => {
     return `${hours}h ${minutes}m ${seconds}s`;
   };
 
+  const lanzarSerpentinas = () => {
+    confetti({
+      particleCount: 100,
+      spread: 160,
+      startVelocity: 30,
+      scalar: 1.2,
+      origin: { y: 0.6 }, // Desde la parte superior
+      colors: ["#FF69B4", "#FFD700", "#00FFFF", "#FF4500"], // Rosado, dorado, celeste, naranja
+    });
+  };
+
   const handleButtonClick = () => {
     setAutoChangeEnabled(false);
+    lanzarSerpentinas();
 
     const randomPhrase =
       customPhrases[Math.floor(Math.random() * customPhrases.length)];
     setCurrentPhrase(randomPhrase);
   };
 
-  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 11;
+  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 10;
 
   return (
     <div className="container">
@@ -83,11 +112,14 @@ const Counter = () => {
           : "💚 🎨 11 de Marzo 🎸 🎮"}
       </h1>
 
-      <p>Tiempo restante: {formatTime(timeLeft)}</p>
+      {!showContent && <p>Tiempo restante: {formatTime(timeLeft)}</p>}
 
       {showContent ? (
         <div>
-          <h2>{currentPhrase}</h2>
+          <div className="sticker-container">
+            <h2>{currentPhrase.title}</h2>
+          </div>
+
           {isButtonEnabled && (
             <div className="button-container">
               <button onClick={handleButtonClick}>¡ Sorpréndeme !</button>
@@ -95,7 +127,9 @@ const Counter = () => {
           )}
         </div>
       ) : (
-        <p>¡Esperando! ⏳</p>
+        <div>
+          <p>¡Esperando! ⏳</p>
+        </div>
       )}
     </div>
   );
