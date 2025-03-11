@@ -1,11 +1,11 @@
 import confetti from "canvas-confetti";
 import { useState, useEffect } from "react";
 
-const targetDate = new Date("2025-03-10T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
+const targetDate = new Date("2025-03-11T00:00:00-05:00"); // Fecha objetivo (11 de marzo) con hora de Ecuador (GMT-5)
 
 const phrases = [
   {
-    title: "Que todos tus sueños se hagan realidad.⭐️ ",
+    title: "Que todos tus sueños se hagan realidad. ⭐️",
   },
   {
     title: "Eres una persona increíble. 😇",
@@ -18,14 +18,14 @@ const phrases = [
 const customPhrases = [
   {
     title:
-      "Hoy es un día especial, y de corazón espero que tengas mucha alegría y éxito.",
+      "Hoy es un día especial, y de corazón espero que tengas mucha alegría y éxito. 🥰",
   },
   {
-    title: "Ojalá este año te traiga un montón de oportunidades.",
+    title: "Ojalá este año te traiga un montón de oportunidades. 😎",
   },
   {
     title:
-      "Recuerda, cada pequeño paso te lleva más cerca de donde quieres estar. Confía en ti, Mafer. 💫",
+      "Recuerda, cada pequeño paso te lleva más cerca de donde quieres estar. Confía en ti. 💫",
   },
   {
     title: "Para lo que necesites, aquí estará su servidor. 😊",
@@ -106,7 +106,7 @@ const Counter = () => {
     setCurrentPhrase(randomPhrase);
   };
 
-  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 10;
+  const isMarch11 = new Date().getMonth() === 2 && new Date().getDate() === 11;
 
   return (
     <div className="container">
@@ -131,7 +131,7 @@ const Counter = () => {
           )}
         </div>
       ) : (
-        <div>
+        <div className="wait">
           <p>¡Esperando! ⏳</p>
         </div>
       )}

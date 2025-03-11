@@ -94,6 +94,11 @@ h2 {
   color: whitesmoke;
 }
 
+.wait {
+  padding: 1rem;
+  font-weight: bold;
+}
+
 .counter {
   font-size: 1vw;
   margin-top: 10px;
