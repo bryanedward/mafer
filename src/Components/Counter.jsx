@@ -5,10 +5,10 @@ const targetDate = new Date("2025-03-10T00:00:00-05:00"); // Fecha objetivo (11 
 
 const phrases = [
   {
-    title: "Que todos tus sueños se hagan realidad.",
+    title: "Que todos tus sueños se hagan realidad.⭐️ ",
   },
   {
-    title: "Eres una persona increíble.",
+    title: "Eres una persona increíble. 😇",
   },
   {
     title: "Disfruta tu día al máximo. 🎂",
@@ -29,6 +29,10 @@ const customPhrases = [
   },
   {
     title: "Para lo que necesites, aquí estará su servidor. 😊",
+  },
+  {
+    title:
+      "Nunca dejes que nada te haga decaer, incluso cuando sientas que las cosas no salen como lo planeaste. Lo importante es seguir adelante. 💪",
   },
 ];
 
