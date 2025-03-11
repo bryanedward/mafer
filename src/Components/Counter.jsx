@@ -132,7 +132,8 @@ const Counter = () => {
         </div>
       ) : (
         <div className="wait">
-          <p>¡Esperando! ⏳</p>
+          <p>¡Esperando!</p>
+          <span className="spinner">⌛</span>
         </div>
       )}
     </div>
